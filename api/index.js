@@ -20,9 +20,6 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
-});
 
 app.use("/api/user", userRouter);
 
@@ -40,4 +37,10 @@ app.use((err, req, res, next) => {
     statusCode,
     message,
   });
+});
+
+// Bind to Render port
+const port = parseInt(process.env.PORT || '3000', 10);
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
