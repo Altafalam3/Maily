@@ -40,7 +40,7 @@ app.use((err, req, res, next) => {
 });
 
 // Bind to Render port
-const port = parseInt(process.env.PORT || '3000', 10);
+const port = parseInt(process.env.PORT || '3000');
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
